@@ -102,9 +102,6 @@ models:
   llama-3-1-8b-instruct:
     id: meta-llama/Llama-3.1-8B-Instruct
     enabled: false
-    resources:
-      limits:
-        habana.ai/gaudi: "1"
     args:
       - --max-model-len
       - "14336"
@@ -124,9 +121,7 @@ models:
     id: meta-llama/Llama-3.3-70B-Instruct
     enabled: false
     storageSize: 150Gi
-    resources:
-      limits:
-        habana.ai/gaudi: "4"
+    numDevices: 4
     args:
       - --tensor-parallel-size
       - "4"
